@@ -1,14 +1,5 @@
 #include "Practica1.h"
 
-Practica1::Practica1()
-{
-    //ctor
-}
-
-Practica1::~Practica1()
-{
-    //dtor
-}
 void Practica1::printArr(char* start,char*ends){
     while(start!=ends){
         cout<<*start<<" ";
@@ -190,6 +181,14 @@ void Practica1::signToToken(string in){
     }
 }
 
+void Practica1::ordenar(bool a,string arr1[],int tam){
+    if (a)
+        Practica1::ordenSeleccion(arr1,tam,Practica1::descendente);
+    else
+        Practica1::ordenSeleccion(arr1,tam,Practica1::ascendente);
+}
+
+
 void Practica1::ordenSeleccion(string arr[],int tam,bool (*compare)(string,string)){
     int indexFirst;
     for (int i=0;i<tam;i++){
@@ -200,9 +199,4 @@ void Practica1::ordenSeleccion(string arr[],int tam,bool (*compare)(string,strin
         swap(arr[indexFirst],arr[i]);
     }
 }
-
-
-
-
-
 

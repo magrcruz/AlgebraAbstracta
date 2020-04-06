@@ -12,8 +12,6 @@ using namespace std;
 class Practica1
 {
     public:
-        Practica1();
-        virtual ~Practica1();
         static string charToStr(char arr[],int tam);
         static void printArr(char* start,char* ends);
         static void printArr(string* start,string* ends);
@@ -26,6 +24,7 @@ class Practica1
         static string cifrado(string str,bool cifrar=true,int root=13);
         static void juegoAhorcado();
         static void signToToken(string in);
+        static void ordenar(bool a,string arr1[],int tam);
         static void ordenSeleccion(string arr[],int tam,bool (*compare)(string,string));
         static bool ascendente(string a, string b){return a<b;}
         static bool descendente(string a, string b){return a>b;}
