@@ -22,10 +22,12 @@ class Practica1
         static string cifrado(string str,bool cifrar=true,int root=13);
         static void juegoAhorcado();
         static void signToToken(string in);
+
         static void ordenar(bool a,string arr1[],int tam);
         static void ordenSeleccion(string arr[],int tam,bool (*compare)(string,string));
-        static bool ascendente(string a, string b){return a<b;}
-        static bool descendente(string a, string b){return a>b;}
+        static bool ascendente(string a, string b){return a.compare(b)<0;}//a<b
+        static bool descendente(string a, string b){return a.compare(b)>0;}//a>b
+
 
         template <typename T>
         static void printArr(T* start,T* ends){

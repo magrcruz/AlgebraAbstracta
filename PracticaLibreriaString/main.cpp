@@ -8,7 +8,7 @@ int main()
 {
     string str1,str2,str3;
     int a, b;
-
+/*
     //1.Convertir un objeto string a un array de tipo char, y viceversa
     cout<<endl<<"Ingrese string para convertir a array: ";
     cin>>str1;
@@ -19,13 +19,13 @@ int main()
 
     //de arreglo de chars a string
     cout<<endl<<"Char a String: "<<Practica1::charToStr(arr,sizeof(arr))<<endl;
-
+*/
     //2.Diferencia entre la función capacity y la función size
     /**
     La funcion capacity retorna el numero de caracteres almacenables en la string que se pueden almacenar actualmente sin aumentar memoria
     La funcion size retorna el numero de caracteres almacenados actualmente en el estring
     */
-
+/*
     //3.Convertir las letras de un string de minúsculas a mayúsculas
     str1=Practica1::mayToMin(str1);
     cout<<endl<<"Invertir min a may: "<<str1<<endl;
@@ -102,18 +102,17 @@ int main()
     getline(cin,str1);//recibe'\n'
     cout<<"Ingrese mensaje a cifrar: "<<endl;
     getline(cin,str1);
-    str1=Practica1::cifrado(str1);
-    cout<<"Mensaje cifrado: "<<str1<<endl;
-    cout<<"Mensaje descifrado: "<<Practica1::cifrado(str1,0);
+    cout<<"Mensaje cifrado: "<<Practica1::cifrado(str1)<<endl;
+    cout<<"Mensaje descifrado: "<<Practica1::cifrado(Practica1::cifrado(str1),0)<<endl;
 
-
+*/
     /**
     Si no se conociera la clave entonces sería muy sencillo quebrantar el código ya que solo se necesitaría ir probando con cada clave
     si se hiciera manualmente podría tomar un poco de tiempo pero tarde o temprano se resolvería ya que solo hay 26 posibles claves
     (por las 26 letras), en el caso de una supercomputadora o una computadora esta operación se reduciría notablemente haciendo este
     encriptado muy sencillo de romper
     */
-
+/*
     //18.11 programa que introduzca primer nombre y un apellido, y que concatene en una nuevo
     cout<<endl<<"Ingrese nombre y apellido en lineas separadas"<<endl;
     cin>>str1>>str2;
@@ -142,14 +141,15 @@ int main()
         cout<<*i;
         i++;
     }
-
+*/
     //18.27 Escriba una versión de la rutina de ordenamiento (figura 8.28) que ordene string. Use la función swap
     a=6;
     bool seleccion;
-    string arr1[a]={"lo","esencial","invisible","a","los","ojos"};
+ /*   string arr1[a]={"lo","esencial","invisible","a","los","ojos"};
     cout<<endl<<"Orden: Ingrese (0)ascendente o (1)descendente"<<endl;
     cin>>seleccion;
     Practica1::ordenar(seleccion,arr1,a);
     Practica1::printArr(arr1,arr1+a);
+*/
 
 }

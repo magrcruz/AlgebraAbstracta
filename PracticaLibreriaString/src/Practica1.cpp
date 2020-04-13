@@ -42,7 +42,7 @@ void Practica1::buscarYremplazar(string &primero,string segundo,string tercero){
 void Practica1::writeNnumeros(int n){
     ofstream salida("numeros.txt");
     for (int i=0;i<n;i++)
-        salida << (rand()%999)+1 << endl;
+        salida << to_string((rand()%999)+1) << endl;
     salida.close();
 }
 
@@ -74,7 +74,8 @@ string Practica1::cifrado(string str,bool cifrar,int root){
 }
 
 void Practica1::juegoAhorcado(){
-    while(true){
+    bool playAgain=true;
+    while(playAgain){
         int intentRestantes=7;
         cout<<"AHORCADO"<<endl;
         string intento;
@@ -82,6 +83,7 @@ void Practica1::juegoAhorcado(){
         string jugando(respuesta.size(),'X');
         size_t index;
         while (intentRestantes){
+            playAgain=false;
             cout<<"Adivine la palabra: "<<jugando<<endl;
             cin>>intento;
             index=respuesta.find(intento[0]);//busca si hay al menos una letra como la que ingreso
@@ -93,14 +95,16 @@ void Practica1::juegoAhorcado(){
             else{
                 cout<<"si"<<endl;
                 revelarInStr(jugando,respuesta,intento);
-                if(jugando==respuesta) break;
+                if(jugando==respuesta){
+                    intentRestantes=0;
+                    cout<<"Felicidades!!! Adivino mi palabra. Desea jugar otra vez? si/no"<<endl;
+                    cin>>respuesta;
+                    if (!respuesta.compare("si")) playAgain=true;
+                }
             }
         }
-        if(!intentRestantes) return;
-        cout<<"Felicidades!!! Adivino mi palabra. Desea jugar otra vez? si/no"<<endl;
-        cin>>respuesta;
-        if (respuesta=="no") return;
     }
+
 }
 
 
@@ -119,7 +123,8 @@ string Practica1::obtenerPalabra(){//incompleto
         case '2':{
             const int tam=5;
             string someWords[]={"algebra","calculo","programacion","apreciacion","discretas"};
-            return someWords[rand()%tam];
+            out=someWords[rand()%tam];
+            break;
         }
         case '3':{
             ifstream archivo("moreWords.txt");

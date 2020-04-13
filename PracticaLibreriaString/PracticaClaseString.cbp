@@ -34,8 +34,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Cesar.h" />
 		<Unit filename="include/Practica1.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Cesar.cpp" />
 		<Unit filename="src/Practica1.cpp" />
 		<Extensions>
 			<code_completion />
