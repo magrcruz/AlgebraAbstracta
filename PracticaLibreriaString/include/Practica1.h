@@ -28,6 +28,17 @@ class Practica1
         static bool ascendente(string a, string b){return a.compare(b)<0;}//a<b
         static bool descendente(string a, string b){return a.compare(b)>0;}//a>b
 
+        static bool ascendenteN(string a, string b){
+            if(a.size()==b.size())
+                return a.compare(b)<0;
+            return a.size()<b.size();
+            }//a<b
+        static bool descendenteN(string a, string b){
+            if(a.size()==b.size())
+                return a.compare(b)>0;
+            return a.size()>b.size();
+            }//a>b
+        static void ordenarN(bool a,string arr1[],int tam);
 
         template <typename T>
         static void printArr(T* start,T* ends){

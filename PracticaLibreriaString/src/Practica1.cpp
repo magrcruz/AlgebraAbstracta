@@ -189,3 +189,11 @@ void Practica1::ordenSeleccion(string arr[],int tam,bool (*compare)(string,strin
     }
 }
 
+void Practica1::ordenarN(bool a,string arr1[],int tam){
+    if (a)
+        Practica1::ordenSeleccion(arr1,tam,Practica1::descendenteN);
+    else
+        Practica1::ordenSeleccion(arr1,tam,Practica1::ascendenteN);
+}
+
+
