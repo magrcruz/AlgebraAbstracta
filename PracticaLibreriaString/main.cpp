@@ -141,7 +141,7 @@ int main()
         cout<<*i;
         i++;
     }
-*/
+
     //18.27 Escriba una versión de la rutina de ordenamiento (figura 8.28) que ordene string. Use la función swap
     a=6;
     bool seleccion;
@@ -150,6 +150,7 @@ int main()
     cin>>seleccion;
     Practica1::ordenar(seleccion,arr1,a);
     Practica1::printArr(arr1,arr1+a);
+
     //Version 2
     int tam=6;
     int arrNumeros[]={1,24,3,5,22,65};
@@ -158,6 +159,6 @@ int main()
     Practica1::ordenarN(seleccion,arr2,tam);
     Practica1::printArr(arr2,arr2+tam);
 
-//*/
+*/
 
 }
