@@ -16,8 +16,6 @@ string Kasisiki::kasiskiAtack(string mensaje){
     vector <string> subcadenas=dividirCadena(lenClave,mensaje);
     for(int i=0;i<subcadenas.size();i++)
         clave+=analisisFrecuenciasClave(subcadenas[i]);
-    ///Continuara...
-
     return clave;
 }
 
@@ -28,7 +26,6 @@ vector <int> Kasisiki::distanciaSecuenciasRepetidas(string mensaje){
     for (int i=0;i<mensaje.size()-3;i++){
         size_t finder=mensaje.find(strRepetida,i+1);
         if (finder!=string::npos){
-            cout<<"i"<<i<<endl;
             cadenasRepetidas.push_back(strRepetida);
             distancias.push_back(finder-i);
         }
@@ -54,7 +51,6 @@ int Kasisiki::mcd (vector<int>a){
     return mcd;
 }
 
-//ir buscando bucle cadenas de 3 char
 vector <string> Kasisiki::dividirCadena(int noSubcadenas,string mensaje){
     vector <string> subcadenas(noSubcadenas);
     int tam=mensaje.size();
@@ -93,7 +89,6 @@ int Kasisiki::countInString(string buscar, string mensaje){
 }
 
 string Kasisiki::analisisFrecuenciasClave(string mensaje){
-    //string letrasFrecuentes="AEO";
     int posFrecuent[]={0,4,10+4};
     vector <int> arr(alfabeto.size());
     vector <int> sumas(alfabeto.size());
@@ -104,7 +99,6 @@ string Kasisiki::analisisFrecuenciasClave(string mensaje){
         sumas[i]+=arr[(i+14)%alfabeto.size()];
     }
     int mayPos=findPosMayor(sumas);
-    //cout<<"Mayor posicion: "<<findPosMayor(sumas)<<endl;
     return alfabeto.substr(mayPos,1);
 }
 
@@ -112,10 +106,7 @@ int Kasisiki::findPosMayor(vector <int> arr){
     int posMayor=0;
     for(int i=1;i<arr.size();i++){
         if(arr[i]>arr[posMayor]) posMayor=i;
-        //else if(arr[i]==arr[posMayor])
     }
-
-    cout<<"posMayor: "<<arr[posMayor]<<endl;
     return posMayor;
 }
 
