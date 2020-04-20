@@ -32,9 +32,6 @@ string VigenereClass::cifrado(string mensaje){
     return salida;
 }
 
-
-
-
 string VigenereClass::descifrado(string mensaje){
     string salida;
     int a,b,resta=0;
@@ -52,4 +49,40 @@ string VigenereClass::descifrado(string mensaje){
     return salida;
 }
 
-//void VigenereClass::setClave(string clave){this->clave=clave;}
+string VigenereClass::cifradoModified(string mensaje){
+    claveAux=clave;
+    string salida;
+    int a,b,suma=0;
+    for (int i=0;i<mensaje.size();i++){
+        a=alfabeto.find(claveAux);
+        b=alfabeto.find(mensaje.at(i));
+        if (a!=string::npos&&b!=string::npos){
+            suma=a+b;
+            if (suma>=alfabeto.size()) suma%=alfabeto.size();
+            salida+=alfabeto.at(suma);
+            claveAux+=salida;
+        }
+        else salida+=mensaje.at(i);
+    }
+    return salida;
+}
+
+string VigenereClass::descifradoModified(string mensaje){
+    string salida;
+    int a,b,resta=0;
+    for (int i=0;i<mensaje.size();i++){
+        a=alfabeto.find(mensaje.at(i));
+        b=alfabeto.find(claveAux);
+        if(a!=string::npos&&b!=string::npos){
+            resta=a-b;
+            if (resta<0) resta+=alfabeto.size();
+            else if (resta>=alfabeto.size()) resta%=alfabeto.size();
+            salida+=alfabeto.at(resta);
+        }
+        else salida+=mensaje.at(i);
+    }
+    return salida;
+}
+
+
+void VigenereClass::setClave(string clave){this->clave=clave;}

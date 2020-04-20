@@ -13,12 +13,16 @@ class VigenereClass
         virtual ~VigenereClass();
         string cifrado(string mensaje);
         string descifrado(string mensaje);
-        //void setClave(string clave);
+
+        string cifradoModified(string mensaje);
+        string descifradoModified(string mensaje);
+        void setClave(string clave);
         string alfabeto="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.";
     protected:
 
     private:
         string clave="Pablo Neruda";
+        string claveAux;
 };
 
 #endif // VIGENERECLASS_H

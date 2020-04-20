@@ -11,14 +11,16 @@ string Kasisiki::alfabeto="ABCDEFGHIJKLMNOPQRSRTUVWXYZ";
 
 int main(){
 //insertar texto cifrado manualmente 3a
-/*
+    string alfNumerico="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.";
+
+
     bool porConsola;
     string mensaje,aux,cifrado;
     VigenereClass a;
-
+    a.alfabeto=alfNumerico;
     ifstream archivo("texto.txt");
     if(archivo.fail())
-        cout<<"Fallaste"<<endl;
+        cout<<"Falla en cargar el archivo"<<endl;
     else{
         while(getline(archivo,aux)){
             mensaje+=aux;
@@ -35,7 +37,9 @@ int main(){
     aux=a.descifrado(cifrado);
     aux=practica2::eliminarAQUI10W4(aux);
     cout<<aux<<endl;
-    */
+
+    string alfAscii="ÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇ !\"#$%&'()*+'-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_´abcdefghijklmnopqrstuvwxyz{|}~Ç";
+    string alfHex="";
 
     //cout<<Kasisiki::kasiskiAtack("LNUDVMUYRMUDVLLPXAFZUEFAIOVWVMUOVMUEVMUEZCUDVSYWCIVCFGUCUNYCGALLGRCYTIJTRNNPJQOPJEMZITYLIAYYKRYEFDUDCAMAVRMZEAMBLEXPJCCQIEHPJTYXVNMLAEZTIMUOFRUFC");
 
