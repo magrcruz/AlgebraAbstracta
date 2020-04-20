@@ -33,7 +33,6 @@ string practica2::insertAQUI10W4(string mensaje){
     for (int i=10;i<len;i+=10+aqui.size())
         mensaje.insert(i,aqui);
     int aux=mensaje.size()%4;
-    cout<<"len: "<<len<<endl;
     if(aux){
         string w((4-aux),'W');
         mensaje.append(w);
@@ -48,5 +47,11 @@ string practica2::eliminarAQUI10W4(string mensaje){
         mensaje.erase(finder,aqui.size());
         finder=mensaje.find(aqui);
     }
-    finder=mensaje.rfind
+    finder=mensaje.rfind('W');
+    if (finder==string::npos) cout<<"W no encontrad"<<endl;
+    for(int i=0;i<4&&finder!=string::npos;i++){
+        mensaje.erase(finder,1);
+        finder=mensaje.rfind('W');
+    }
+    return mensaje;
 }

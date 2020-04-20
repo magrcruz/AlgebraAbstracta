@@ -13,6 +13,7 @@ class practica2
         static void imprimirArchivo(string nombreArchivo);
         static void getValues(bool &porConsola,string &clave,string &aDesCifrar);
         static string insertAQUI10W4(string mensaje);
+        static string eliminarAQUI10W4(string mensaje);
         //static string getAscii(int n);
     protected:
 

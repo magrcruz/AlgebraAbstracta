@@ -3,12 +3,15 @@
 #include <fstream>
 #include "VigenereClass.h"
 #include "practica2.h"
+#include "Kasisiki.h"
 
 using namespace std;
 
+string Kasisiki::alfabeto="ABCDEFGHIJKLMNOPQRSRTUVWXYZ";
 
 int main(){
 //insertar texto cifrado manualmente 3a
+/*
     bool porConsola;
     string mensaje,aux,cifrado;
     VigenereClass a;
@@ -30,5 +33,10 @@ int main(){
     cifrado=a.cifrado(aqui);
     cout<<cifrado<<endl;
     aux=a.descifrado(cifrado);
+    aux=practica2::eliminarAQUI10W4(aux);
     cout<<aux<<endl;
+    */
+
+    //cout<<Kasisiki::kasiskiAtack("LNUDVMUYRMUDVLLPXAFZUEFAIOVWVMUOVMUEVMUEZCUDVSYWCIVCFGUCUNYCGALLGRCYTIJTRNNPJQOPJEMZITYLIAYYKRYEFDUDCAMAVRMZEAMBLEXPJCCQIEHPJTYXVNMLAEZTIMUOFRUFC");
+
 }
