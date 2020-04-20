@@ -35,9 +35,11 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/VigenereClass.h" />
+		<Unit filename="include/VigenereModified.h" />
 		<Unit filename="include/practica2.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/VigenereClass.cpp" />
+		<Unit filename="src/VigenereModified.cpp" />
 		<Unit filename="src/practica2.cpp" />
 		<Extensions>
 			<code_completion />

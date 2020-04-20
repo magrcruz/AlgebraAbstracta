@@ -10,11 +10,9 @@ class practica2
 {
     public:
         practica2();
-        virtual ~practica2();
         static void imprimirArchivo(string nombreArchivo);
-        static void ParaCifrarVigenere();
-        static void paraDescifrarVigenere();
-        static string insertAQUI10yCifrar(string mensaje);
+        static void getValues(bool &porConsola,string &clave,string &aDesCifrar);
+        static string insertAQUI10W4(string mensaje);
         //static string getAscii(int n);
     protected:
 

@@ -13,14 +13,12 @@ class VigenereClass
         virtual ~VigenereClass();
         string cifrado(string mensaje);
         string descifrado(string mensaje);
-        void setClave(string clave);
-        string alfabeto;
+        //void setClave(string clave);
+        string alfabeto="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.";
     protected:
 
     private:
-        string clave;
+        string clave="Pablo Neruda";
 };
 
 #endif // VIGENERECLASS_H
-
-//profesora, el enlace del repositorio lo envié con el anterior trabajo entonces solo actualice el repositorio, ¿debería enviarlo de nuevo?
