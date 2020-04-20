@@ -26,5 +26,9 @@ int main(){
     cout<<cifrado<<endl;
     cout<<a.descifrado(cifrado)<<endl;
 
-    cout<<practica2::insertAQUI10W4(mensaje);
+    string aqui=practica2::insertAQUI10W4(mensaje);
+    cifrado=a.cifrado(aqui);
+    cout<<cifrado<<endl;
+    aux=a.descifrado(cifrado);
+    cout<<aux<<endl;
 }

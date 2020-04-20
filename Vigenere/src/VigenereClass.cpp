@@ -3,6 +3,7 @@
 VigenereClass::VigenereClass(){
     clave="Pablo Neruda";
     alfabeto="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.";
+
 }
 VigenereClass::VigenereClass(string clave){
     if(clave=="") clave="clave";
@@ -14,8 +15,6 @@ VigenereClass::~VigenereClass()
 {
     //dtor
 }
-
-//alfabeto="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRS,.";
 
 string VigenereClass::cifrado(string mensaje){
     string salida;

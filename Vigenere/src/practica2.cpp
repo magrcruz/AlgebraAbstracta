@@ -41,4 +41,12 @@ string practica2::insertAQUI10W4(string mensaje){
     return mensaje;
 }
 
-
+string practica2::eliminarAQUI10W4(string mensaje){
+    string aqui="AQUI";
+    size_t finder=mensaje.find(aqui);
+    while (finder!=string::npos){
+        mensaje.erase(finder,aqui.size());
+        finder=mensaje.find(aqui);
+    }
+    finder=mensaje.rfind
+}
