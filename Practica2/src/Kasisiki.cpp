@@ -1,5 +1,5 @@
 #include "Kasisiki.h"
-
+//Cambios para imprimir el desarrollo de Kasiski
 Kasisiki::Kasisiki()
 {
     //ctor
@@ -14,8 +14,7 @@ string Kasisiki::kasiskiAtack(string mensaje){
     vector <int> distancias=distanciaSecuenciasRepetidas(mensaje);
     int lenClave=mcd(distancias);
     vector <string> subcadenas=dividirCadena(lenClave,mensaje);
-    for(int i=0;i<subcadenas.size();i++)
-        clave+=analisisFrecuenciasClave(subcadenas[i]);
+    for(int i=0;i<subcadenas.size();i++) clave+=analisisFrecuenciasClave(subcadenas[i]);
     return clave;
 }
 
@@ -37,6 +36,7 @@ vector <int> Kasisiki::distanciaSecuenciasRepetidas(string mensaje){
 
 int Kasisiki::mcd (vector<int>a){
     int residuo,mcd,tam=a.size(),i=0;
+    for(int i=0;i<a.size();i++) cout<<a[i]<<" ";
     for(i;i<tam;i++){
         if(i==0)
             mcd=a[0];
@@ -45,9 +45,9 @@ int Kasisiki::mcd (vector<int>a){
            mcd=a[i];
            a[i]=residuo;
         }
-
         while(residuo!=0);
     }
+    cout<<endl<<"Mcd: "<<mcd<<endl;
     return mcd;
 }
 
@@ -73,8 +73,12 @@ vector<int> Kasisiki::frecuencias(string mensaje){
     vector <int> frecuent(alfabeto.size());
     for (int i=0;i<frecuent.size();i++){
         frecuent[i]=countInString(alfabeto.substr(i,1),mensaje);
-        //cout<<"Frecuencia en mensaje: "<<alfabeto[i]<<" "<<frecuent[i]<<endl;//FUNCIONA
     }
+    cout<<endl<<"Frecuencias:"<<endl;
+    for(int i=0;i<alfabeto.size();i++) cout<<setw(3)<<alfabeto.at(i);
+    cout<<endl;
+    for(int i=0;i<alfabeto.size();i++) cout<<setw(3)<<frecuent.at(i);
+    cout<<endl;
     return frecuent;
 }
 
@@ -89,20 +93,25 @@ int Kasisiki::countInString(string buscar, string mensaje){
 }
 
 string Kasisiki::analisisFrecuenciasClave(string mensaje){
-    int posFrecuent[]={0,4,10+4};
+    int posFrecuent[]={0,4,11+4};//modificacion de distancias para el idioma espaniol
     vector <int> arr(alfabeto.size());
     vector <int> sumas(alfabeto.size());
     arr=frecuencias(mensaje);
     for (int i=0;i<alfabeto.size();i++){
-        sumas[i]=arr[(i+0)%alfabeto.size()];
-        sumas[i]+=arr[(i+4)%alfabeto.size()];
-        sumas[i]+=arr[(i+14)%alfabeto.size()];
+        sumas[i]=arr[(i+posFrecuent[0])%alfabeto.size()];
+        sumas[i]+=arr[(i+posFrecuent[1])%alfabeto.size()];
+        sumas[i]+=arr[(i+posFrecuent[2])%alfabeto.size()];
     }
     int mayPos=findPosMayor(sumas);
     return alfabeto.substr(mayPos,1);
 }
 
 int Kasisiki::findPosMayor(vector <int> arr){
+    cout<<endl<<"Suma:"<<endl;
+    for(int i=0;i<alfabeto.size();i++) cout<<setw(3)<<alfabeto.at(i);
+    cout<<endl;
+    for(int i=0;i<arr.size();i++) cout<<setw(3)<<arr.at(i);
+    cout<<endl;
     int posMayor=0;
     for(int i=1;i<arr.size();i++){
         if(arr[i]>arr[posMayor]) posMayor=i;
