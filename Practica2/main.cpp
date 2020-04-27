@@ -12,6 +12,8 @@ string Kasisiki::alfabeto="ABCDEFGHIJKLMÑNOPQRSTUVWXYZ";//Correccion de alfabet
 int main(){
 //insertar texto cifrado manualmente 3a
     string alfNumerico="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.";
+    string alfabetoASCII=" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_´abcdefghijklmnopqrstuvwxyz{|}~ßÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿";
+    string alfabetoHEX=" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_´abcdefghijklmnopqrstuvwxyz{|}~ßÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿";
     bool porConsola;
     string mensaje,aux,cifrado;
     VigenereClass a;
