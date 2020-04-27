@@ -23,6 +23,7 @@ int main()
     cout<<mcdAlgorithms::algoritmo6(a,b)<< endl;
     cout<<"Euclides Recursivo: "<<endl;
     cout<<mcdAlgorithms::euclidesRecursivo(a,b)<< endl;
-
+    cout<<"Euclides Iterativo(diapositiva): "<<endl;
+    cout<<mcdAlgorithms::euclidesIterativo(a,b)<< endl;
     return 0;
 }

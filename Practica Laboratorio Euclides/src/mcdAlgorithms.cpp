@@ -87,3 +87,15 @@ ZZ mcdAlgorithms::euclidesRecursivo(ZZ a,ZZ b){
     if(r==0) return b;
     return euclidesRecursivo(b,r);
 }
+ZZ mcdAlgorithms::euclidesIterativo(ZZ a,ZZ b){
+    ZZ r=mods(a,b);//p2
+    while(b>0){
+        ZZ q=a/b;
+        ZZ r=a-q*b;
+        a=b;
+        b=r;
+        cout<<"a: "<<a<<" b: "<<b<<" r: "<<r<<" q: "<<q<<endl;
+    }
+    return a;
+}
+

@@ -19,6 +19,7 @@ class mcdAlgorithms
         static ZZ algoritmo5(ZZ a,ZZ b);
         static ZZ algoritmo6(ZZ a,ZZ b);
         static ZZ euclidesRecursivo(ZZ a,ZZ b);
+        static ZZ euclidesIterativo(ZZ a,ZZ b);
         static ZZ mods(ZZ a,ZZ b){return a-((a/b)*b);}
         static ZZ valAbs(ZZ a);
 
