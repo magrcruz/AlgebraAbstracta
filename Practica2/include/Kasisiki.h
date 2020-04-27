@@ -3,7 +3,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
+#include <iomanip>
+//Eliminacion de libreria no usada Algorithm y aniadir imanip para imprimir el proceso de Kasiski detallado
 
 using namespace std;
 
