@@ -1,1 +1,1 @@
-# practica1: PracticaLibreriaString
+María Graciel Cruz Cáceres
