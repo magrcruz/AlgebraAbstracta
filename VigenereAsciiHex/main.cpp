@@ -6,9 +6,12 @@ using namespace std;
 int main()
 {
     ViAsciiHex a("clave");
-    string mensaje="Imooto";
+    string mensaje="Algebra Abstracta";
     a.cifrado(mensaje);
-    cout<<a.descifradoSumas("descifrado.txt")<<endl;
-    cout << hex << 15 << endl;
+    a.descifrado("cifrado.txt");
+    cout<<"Archivo cifrado: \"cifrado.txt\""<<endl;
+    cout<<"Archivo descifrado: \"descifrado.txt\""<<endl;
+
     return 0;
+
 }

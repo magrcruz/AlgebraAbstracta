@@ -6,8 +6,7 @@ VigenereClass::VigenereClass(){
 
 }
 VigenereClass::VigenereClass(string clave){
-    if(clave=="") clave="clave";
-    else this->clave=clave;
+    this->clave=clave;
     alfabeto="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.";
 }
 
