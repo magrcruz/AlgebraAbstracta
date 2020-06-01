@@ -1,9 +1,9 @@
 #include "mcdAlgorithms.h"
 
 ZZ mcdAlgorithms::mods(ZZ a,ZZ b){
-    ZZ q=a/b;
-    if(q<0) q--;
-    return a-q*b;
+    ZZ r=a-((a/b)*b);
+    if(r<0) r=b-r;
+    return r;
 }
 
 bool mcdAlgorithms::even(ZZ a){
