@@ -6,10 +6,9 @@ Rsa::Rsa()
     ZZ p=ZZ(17), q=ZZ(43);
     n=p*q;
     ZZ fiN=(p-1)*(q-1);
-    /*do{
+    do{
         e=MathZZ::aleatorio(n);
-    }while(!MathZZ::hayInversa(e,fiN));*/
-    e=101;
+    }while(!MathZZ::hayInversa(e,fiN));
     d=MathZZ::inversa(e,fiN);
     cout<<"n "<<n<<" e "<<e<<endl;
 }
