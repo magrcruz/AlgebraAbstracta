@@ -26,42 +26,8 @@ string Afin::descifrado(string mensaje){
 }
 
 void Afin::generarClaves(){
-    do{
-        a= Mates::aleatorio(500);
-    }while(!Mates::hayInversa(a,alfabeto.size()));
     b= Mates::aleatorio(alfabeto.size());
+    do{
+        a= Mates::aleatorio(alfabeto.size());
+    }while(!Mates::hayInversa(a,alfabeto.size()));
 }
-
-
-/**
-Afin ()
-{ alf = {ab...z}
-Generar claves(int a, int b) // emisor
-}
-Afin (int a, int b)
-{
- Inva = inversa(a,tamAlf)
-b=b;
-}
-
-Generar claves( )
-{a= aleatorio(); // srand
-aa = 1mcd_euclides(a,tamAlf)
-while (aa!=1) {
-Aleatorio
-aa = 1mcd_euclides(a,tamAlf)}
-a=aa;
-
-b=aleatorio();
-}
-
-Main ()
-{
-   Afin a(); //emisor
-Afin b(a,b)
-
-a.cifrado(mensaje)
-b. Descifrado (men-cifrado)
-}
-
-*/

@@ -2,7 +2,7 @@
 
 int Mates::mod(int a,int b){
     int r=a-((a/b)*b);
-    if(r<0) r=b-r;
+    if(r<0) r=b+r;
     return r;
 }
 
@@ -69,6 +69,6 @@ int Mates::mcd(int x,int y){//5
 }
 
 int Mates::aleatorio(int limite){
-    srand(time(NULL));
-    return mod(rand(),limite);
+    srand (time(NULL));
+    return mod(rand(),limite-1)+1;
 }
