@@ -1,9 +1,9 @@
 #include "Mates.h"
 
-int Mates::mod(int a,int b){
-    int r=a-((a/b)*b);
-    if(r<0) r=b+r;
-    return r;
+int Mates::mod(int a,int n){
+    int q=a/n;
+    if(q<0) q--;
+    return a-q*n;
 }
 
 bool Mates::even(int a){
@@ -70,5 +70,5 @@ int Mates::mcd(int x,int y){//5
 
 int Mates::aleatorio(int limite){
     srand (time(NULL));
-    return mod(rand(),limite-2)+1;
+    return mod(rand(),limite-1)+1;
 }

@@ -2,3 +2,6 @@ bin/
 obj/
 *.depend
 *.layout
+*primos.txt
+*cipherMessage.txt
+*decipherMessage.txt
