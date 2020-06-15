@@ -20,6 +20,7 @@ class MathZZ
         static ZZ mod(ZZ a,ZZ b);
         static ZZ aleatorio(ZZ limite=ZZ(50));
         static ZZ expModular(ZZ base, ZZ exp, ZZ n);
+        static ZZ primoAleatorio();
 };
 
 #endif // MathZZ_H

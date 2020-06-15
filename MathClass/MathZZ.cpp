@@ -70,16 +70,14 @@ ZZ MathZZ::mcd(ZZ x,ZZ y){//5
 
 ZZ MathZZ::aleatorio(ZZ limite){
     srand (time(NULL));
-    return mod(ZZ(rand()),limite-2)+1;
+    return mod(ZZ(rand()),limite-1)+1;
 }
 
 ZZ MathZZ::expModular(ZZ base, ZZ exp, ZZ n){
     ZZ salida=ZZ(1);
     do{
-        if(!even(exp)){
-            salida*=base;
-            salida=mod(salida, n);
-        }
+        if(!even(exp))
+            salida=mod(salida*base, n);
         base=mod(base*base,n);
         exp>>=1;
     }while(exp!=ZZ(0));
