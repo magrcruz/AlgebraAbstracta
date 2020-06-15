@@ -1,9 +1,10 @@
 #include "Mates.h"
 
-int Mates::mod(int a,int n){
-    int q=a/n;
-    if(q<0) q--;
-    return a-q*n;
+int Mates::mod(int a,int b){
+    int r=a-(b*(a/b));
+    if(r<0) r=b+r;
+    return r;
+
 }
 
 bool Mates::even(int a){
