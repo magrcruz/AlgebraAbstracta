@@ -6,6 +6,7 @@ Rsa::Rsa()
     ZZ p=ZZ(17), q=ZZ(43);
     n=p*q;
     ZZ fiN=(p-1)*(q-1);
+    //e=401;
     do{
         e=MathZZ::aleatorio(n);
     }while(!MathZZ::hayInversa(e,fiN));
@@ -22,7 +23,7 @@ void Rsa::cifrado(string mensaje){
     ofstream salida("cipherMessage.txt");
     for(int i=0;i<mensaje.size();i++){
         ZZ p= ZZ(alfabeto.find(mensaje.at(i)));
-        salida<<MathZZ::expModular(p,e,n)<<'\n';
+        salida<<MathZZ::expModular(p,e,n)<<endl;
     }
     salida.close();
 }
@@ -34,7 +35,7 @@ void Rsa::cifrado(){
     string line;
     while(getline(in,line)){
         ZZ p = conv<ZZ>(line.c_str());
-        out<<MathZZ::expModular(p,e,n)<<'\n';
+        out<<MathZZ::expModular(p,e,n)<<endl;
     }
     in.close();
     out.close();
@@ -46,7 +47,7 @@ void Rsa::descifrado(){
     string line;
     while(getline(in,line)){
         ZZ q = conv<ZZ>(line.c_str());
-        out<<MathZZ::expModular(q,d,n)<<'\n';
+        out<<MathZZ::expModular(q,d,n)<<endl;
     }
     in.close();
     out.close();
