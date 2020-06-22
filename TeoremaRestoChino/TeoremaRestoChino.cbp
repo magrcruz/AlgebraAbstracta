@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../MathClass/funciones.cpp" />
+		<Unit filename="../MathClass/funciones.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

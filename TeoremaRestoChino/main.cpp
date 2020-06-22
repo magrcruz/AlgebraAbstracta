@@ -2,72 +2,9 @@
 #include <NTL/ZZ.h>
 #include <vector>
 #include <fstream>
+#include "C:\Repositorios\AlgebraAbstracta-MariaGracielCruzCaceres\MathClass\Funciones.h"
 using namespace std;
 using namespace NTL;
-
-ZZ valAbs(ZZ a){
-    if (a<0) return (a*-1);
-    return a;
-}
-bool even(ZZ a){
-    ZZ r=(a>>1)<<1;
-    if(r<0) r=ZZ(2)+r;
-    return r==a;
-}
-bool hayInversa(ZZ x,ZZ y){
-    if(even(x)&&even(y)) return 0;
-    while(x!=0){
-        while(even(x)) x=x>>1;
-        while(even(y)) y=y>>1;
-        ZZ t=valAbs((x-y))>>1;
-        if(x>=y) x=t;
-        else y=t;
-    }
-    return y==ZZ(1);
-}
-
-ZZ mod(ZZ a,ZZ n){
-    ZZ q=a/n;
-    if(q<0) q--;
-    return a-q*n;
-}
-ZZ inversa(ZZ r1, ZZ r2){
-    ZZ s1=ZZ(1), s2=ZZ(0), b=ZZ(r2);
-    if (hayInversa(r1,r2)){
-        while (r2>0){
-            ZZ q=r1/r2;
-            ZZ r=r1-q*r2;
-            r1=r2;
-            r2=r;
-            ZZ s=s1-q*s2;
-            s1=s2;
-            s2=s;
-        }
-        if(s1<0) return mod(s1,b);
-        return s1;
-    }
-    else cout<<"No tiene inversa"<<endl;
-    return ZZ(0);
-}
-
-ZZ mcd(ZZ x,ZZ y){//5
-    ZZ g(1);
-    while(even(x)&&even(y)){
-        x=x>>1;
-        y=y>>1;
-        g=g<<1;
-    }
-    while(x!=0){
-        while(even(x))
-            x=x>>1;
-        while(even(y))
-            y=y>>1;
-        ZZ t=valAbs((x-y))>>1;
-        if(x>=y) x=t;
-        else y=t;
-    }
-    return (g*y);
-}
 
 vector<ZZ> inputValues(){
     ///ecuacion de la forma ki x = ai mod pi, se ingresa de la forma "ki,ai,pi," cada ecuacion
