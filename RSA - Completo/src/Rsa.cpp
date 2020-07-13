@@ -56,7 +56,7 @@ string Rsa::descifrado(string mensaje){
     int digit=digitN-1;
     for(int i=0;i<mensaje.size();i+=digitN){
         ZZ c(conv<ZZ>(mensaje.substr(i,digitN).c_str()));
-        c=expModular(c,d,n);
+        c=Trc(c);
         string ceros((digit-ZZtoStr(c).size()),'0');
         salida+=ceros+ZZtoStr(c);
     }
