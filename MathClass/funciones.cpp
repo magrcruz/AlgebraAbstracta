@@ -67,7 +67,7 @@ ZZ mcd(ZZ x,ZZ y){//5
     }
     return (g*y);
 }
-
+//version antigua de aleatorio no usada
 ZZ aleatorio(ZZ limite){
     srand (time(NULL));
     return mod(ZZ(rand()),limite-1)+1;
@@ -89,6 +89,7 @@ int modint(int a,int n){
     if(q<0) q--;
     return a-(n*q);
 }
+//version antigua de aleatorio no usada
 int aleatorioint(int limite){
     srand (time(NULL));
     return modint(rand(),limite-1)+1;

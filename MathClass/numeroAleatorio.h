@@ -12,7 +12,7 @@
 using namespace NTL;
 using namespace std;
 
-bool millerRabinOdd(ZZ n,int nVeces);
+bool millerRabinOdd(ZZ n);
 ZZ findProbablyPrimeClosest(int bits);
 
 class numeroAleatorio
@@ -20,7 +20,7 @@ class numeroAleatorio
     public:
          ZZ generateAleatorio(int bits);
     private:
-         string processInfo;
+         string processInfo;//guarda informacion de los procesos en una string
          void fillWithMemoryInfo();
          vector<int> generateSeed();
          int modint(int a,int n);

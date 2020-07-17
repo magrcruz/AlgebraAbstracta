@@ -74,8 +74,6 @@ void numeroAleatorio::izqRotate(vector<bool> &vec, int times){
     vec.erase(vec.begin(),vec.begin()+times);
 }
 
-//no son necesarias multiples copias de estos valores
-
 vector<bool> numeroAleatorio::DES(int bits){
     vector<bool> K;//para guardar todas las k
     {
@@ -87,13 +85,13 @@ vector<bool> numeroAleatorio::DES(int bits){
     for(int i=0;i<nBits;i++){
         izqRotate(c,rotaciones[i]);
         izqRotate(d,rotaciones[i]);
-        vector<bool> both(c.begin(),c.end());
+        vector<bool> both(c.begin(),c.end());//junta ambos vectores para hacer el shuffle
         both.insert(both.end(),d.begin(),d.end());
         for(int i=0;i<48;i++) K.push_back(both.at(PC_2[i]));
     }
     }
-    K.resize(bits);
-    K[0]=1; K[bits-1]=1;
+    K.resize(bits);//Elimina valores extra del vector de bool
+    K[0]=1; K[bits-1]=1;//Asegura que el numero que retorna sea impar y de n bits
     return K;
 }
 
@@ -105,13 +103,14 @@ ZZ numeroAleatorio::conversion(vector<bool> vec){
         i<<=1;
     }
     return salida;
-}
+}//Convierte un vector booleano a ZZ tomandolo como numero binario
 
 ZZ numeroAleatorio::generateAleatorio(int bits){
     return conversion(DES(bits));
 }
 
-bool millerRabinOdd(ZZ n,int nVeces){
+bool millerRabinOdd(ZZ n){///Test de primalidad
+    ///Prueba los primeros valores de la criba ya que la exponenciacion modular es mas costosas a un modulo
     if(mod(n,ZZ(2))==ZZ(0)) return false;
     if(mod(n,ZZ(3))==ZZ(0)) return false;
     if(mod(n,ZZ(5))==ZZ(0)) return false;
@@ -122,16 +121,16 @@ bool millerRabinOdd(ZZ n,int nVeces){
     if(mod(n,ZZ(19))==ZZ(0)) return false;
     if(mod(n,ZZ(23))==ZZ(0)) return false;
     int firstPrimes[]={2,3,5,7,11,13,17,19,23};
+    ///Aqui empieza miller Rabin
     ZZ m = n-1;
     long k=0;
     while(mod(n,ZZ(2))==0){
         m>>=1;
         k++;
     }
-    while(nVeces--){
-        ZZ a(firstPrimes[nVeces-1]);
-        ZZ t(expModular(a,m,n));
-        if(t==ZZ(1)||t==ZZ(n-1))//es probablemente primo
+    for(int i=0;i<9;i++){//Realiza la prueba 9 veces con los primeros primos
+        ZZ t(expModular(ZZ(firstPrimes[i]),m,n));
+        if(t==ZZ(1)||t==ZZ(n-1))
             continue;//probablemente primo
         long j=1;
         while(j<k){
@@ -145,17 +144,18 @@ bool millerRabinOdd(ZZ n,int nVeces){
 }
 numeroAleatorio al;
 
-ZZ findProbablyPrimeClosest(int bits){
+ZZ findProbablyPrimeClosest(int bits){//Encuentra el primo mas cercano a un numero aleatorio
     ZZ n=al.generateAleatorio(bits);
     ZZ a=mod(n,ZZ(6));
      n-=a+ZZ(5); //para obtener la forma 6n+5
-     if(millerRabinOdd(n,9)) return n;
-     else{
+     //Los numeros primos tienen la forma de 6n+1 y 6n+5, no necesariamente todos los numeros obtenidos con esa
+     if(millerRabinOdd(n)) return n;//Si es primo retorna ese valor
+     else{//Caso contrario busca los siguientes numeros de la forma 6n+1 y 6n+5 hasta encontrar un primo
         while(true){
             n+=2;
-            if(millerRabinOdd(n,9)) return n;
+            if(millerRabinOdd(n)) return n;
             n+=4;
-            if(millerRabinOdd(n,9)) return n;
+            if(millerRabinOdd(n)) return n;
         }
      }
 }
